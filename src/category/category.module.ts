@@ -1,10 +1,11 @@
+import { CategoryService } from './shared/service/category';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Category } from './shared/entity/Category';
 
 @Module({
   controllers: [],
-  providers: [],
+  providers: [CategoryService],
   exports: [],
   imports: [TypeOrmModule.forFeature([Category])],
 })
