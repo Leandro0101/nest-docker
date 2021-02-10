@@ -10,4 +10,8 @@ export class Category {
 
   @Column()
   description: string;
+
+  constructor(props: Omit<Category, 'id'>) {
+    Object.assign(this, props);
+  }
 }
