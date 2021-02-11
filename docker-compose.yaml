@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  api:
+    container_name: nest_api
+    build: .
+    ports: 
+      - "3001:3001"
+
+  database:
+    container_name: nestdb
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: dockernest
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: toor123
+    ports: 
+      - "3306:3306"

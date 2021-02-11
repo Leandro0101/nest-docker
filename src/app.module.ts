@@ -10,7 +10,7 @@ import { Category } from './category/shared/entity/Category';
     CategoryModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'database',
       port: 3306,
       username: 'root',
       password: 'toor123',
