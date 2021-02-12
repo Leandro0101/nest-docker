@@ -1,22 +1,15 @@
 import { CategoryModule } from './category/category.module';
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Category } from './category/shared/entity/Category';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
     CategoryModule,
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'database',
-      port: 3306,
-      username: 'root',
-      password: 'toor123',
-      database: 'dockernest',
-      entities: [Category],
-      synchronize: true,
+    MongooseModule.forRoot('mongodb://database/dockernest', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }),
   ],
   controllers: [AppController],

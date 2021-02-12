@@ -12,12 +12,12 @@ services:
       - /home/nestdocker/node_modules
 
   database:
-    container_name: nestdb
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_DATABASE: dockernest
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: toor123
-    ports: 
-      - "3306:3306"
+    image: mongo
+    container_name: db_mongo
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodata: 

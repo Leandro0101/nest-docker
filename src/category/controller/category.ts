@@ -1,14 +1,13 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { Category } from '../shared/entity/Category';
-import { CategoryDTO } from '../shared/entity/categoryDTO';
-import { CategoryService } from '../shared/service/category';
+import { Category } from 'src/database/models/category';
+import { CategoryService } from '../service/category';
 
 @Controller('categories')
 export class CategoryController {
   constructor(private categoriesService: CategoryService) {}
 
   @Post()
-  async create(@Body() category: Category): Promise<CategoryDTO> {
+  async create(@Body() category: Category): Promise<Category> {
     return await this.categoriesService.create(category);
   }
 
