@@ -1,4 +1,4 @@
-import { CategoryModule } from './category/category.module';
+import { CategoryModule } from './maincourse/maincourse.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
