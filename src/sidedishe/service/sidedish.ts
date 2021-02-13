@@ -15,4 +15,8 @@ export class SideDishService {
 
     return await createdSideDish.save();
   }
+
+  async findAll(): Promise<SideDish[]> {
+    return await this.sideDishModel.find().exec();
+  }
 }
