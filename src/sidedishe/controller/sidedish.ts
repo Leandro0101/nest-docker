@@ -10,4 +10,9 @@ export class SidedishController {
   async create(@Body() sideDish: SideDish): Promise<SideDish> {
     return await this.sideDishService.create(sideDish);
   }
+
+  @Get()
+  async findAll(): Promise<SideDish[]> {
+    return await this.sideDishService.findAll();
+  }
 }
