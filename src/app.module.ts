@@ -1,3 +1,4 @@
+import { AddressModule } from './address/address.module';
 import { MainCourseModule } from './maincourse/maincourse.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -7,6 +8,7 @@ import { SidedishModule } from './sidedishe/sidedish.module';
 
 @Module({
   imports: [
+    AddressModule,
     SidedishModule,
     MainCourseModule,
     MongooseModule.forRoot('mongodb://database/dockernest', {
