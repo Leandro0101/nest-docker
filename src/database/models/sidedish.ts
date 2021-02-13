@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type SideDisheDocument = SideDishe & Document;
+export type SideDishDocument = SideDish & Document;
 
 @Schema()
-export class SideDishe extends Document {
+export class SideDish extends Document {
   @Prop()
   name: string;
 
@@ -16,4 +16,4 @@ export class SideDishe extends Document {
   maincourse: string;
 }
 
-export const SideDisheSchema = SchemaFactory.createForClass(SideDishe);
+export const SideDishSchema = SchemaFactory.createForClass(SideDish);
