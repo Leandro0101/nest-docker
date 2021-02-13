@@ -5,10 +5,7 @@ import { MainCourseService } from 'src/maincourse/service/maincourse';
 
 @Injectable()
 export class SideDishService {
-  constructor(
-    @InjectModel('SideDish') private sideDishModel: SideDish,
-    private maincourse: MainCourseService,
-  ) {}
+  constructor(private maincourse: MainCourseService) {}
 
   async create(sidedish: SideDish, maincourseId: string): Promise<SideDish> {
     const mainCourse = await this.maincourse.findById(maincourseId);

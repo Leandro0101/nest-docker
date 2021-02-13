@@ -12,5 +12,6 @@ import { MainCourse, MainCourseSchema } from 'src/database/models/maincourse';
   ],
   controllers: [MainCourseController],
   providers: [MainCourseService],
+  exports: [MainCourseService],
 })
 export class MainCourseModule {}
