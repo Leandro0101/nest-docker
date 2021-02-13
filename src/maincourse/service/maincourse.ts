@@ -22,4 +22,8 @@ export class MainCourseService {
   async delete(id: string): Promise<void> {
     return await this.mainCourseModel.deleteOne({ _id: id }).exec();
   }
+
+  async findById(id: string): Promise<MainCourse> {
+    return await this.mainCourseModel.findById(id).exec();
+  }
 }
