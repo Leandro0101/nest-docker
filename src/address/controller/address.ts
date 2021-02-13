@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { Address } from 'src/database/models/address';
+import { Address } from 'src/database/models/entities/address';
 import { AddressService } from '../service/address';
 
 @Controller('adresses')

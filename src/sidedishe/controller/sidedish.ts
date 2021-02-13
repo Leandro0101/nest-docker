@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { SideDish } from 'src/database/models/sidedish';
+import { SideDish } from 'src/database/models/entities/sidedish';
 import { SideDishService } from '../service/sidedish';
 
 @Controller('sidedishes')
