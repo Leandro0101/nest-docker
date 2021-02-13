@@ -19,4 +19,8 @@ export class SideDishService {
   async findAll(): Promise<SideDish[]> {
     return await this.sideDishModel.find().exec();
   }
+
+  async delete(id: string): Promise<void> {
+    await this.sideDishModel.findOneAndDelete({ _id: id });
+  }
 }
