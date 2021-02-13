@@ -10,10 +10,6 @@ export class SideDish extends Document {
 
   @Prop()
   price: number;
-
-  //maincourse id
-  @Prop()
-  maincourse: string;
 }
 
 export const SideDishSchema = SchemaFactory.createForClass(SideDish);
