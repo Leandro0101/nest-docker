@@ -1,3 +1,4 @@
+import { OrderModule } from './order/order.module';
 import { AddressModule } from './address/address.module';
 import { MainCourseModule } from './maincourse/maincourse.module';
 import { Module } from '@nestjs/common';
@@ -8,6 +9,7 @@ import { SidedishModule } from './sidedishe/sidedish.module';
 
 @Module({
   imports: [
+    OrderModule,
     AddressModule,
     SidedishModule,
     MainCourseModule,

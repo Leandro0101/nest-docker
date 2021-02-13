@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { SideDish } from 'src/database/models/entities/sidedish';
+import { SideDish } from 'src/database/models/sidedish';
 
 @Injectable()
 export class SideDishService {

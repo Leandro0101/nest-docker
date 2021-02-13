@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { MainCourse } from 'src/database/models/entities/maincourse';
+import { MainCourse } from 'src/database/models/maincourse';
 import { MainCourseService } from '../service/maincourse';
 
 @Controller('maindish')
