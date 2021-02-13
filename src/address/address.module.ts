@@ -1,4 +1,5 @@
-import { AddressService } from './service/address.service';
+import { AddressController } from './controller/address';
+import { AddressService } from './service/address';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Address, AddressSchema } from 'src/database/models/address';
@@ -7,7 +8,7 @@ import { Address, AddressSchema } from 'src/database/models/address';
   imports: [
     MongooseModule.forFeature([{ name: Address.name, schema: AddressSchema }]),
   ],
-  controllers: [],
+  controllers: [AddressController],
   providers: [AddressService],
 })
 export class AddressModule {}
