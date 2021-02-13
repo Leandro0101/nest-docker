@@ -20,4 +20,9 @@ export class MainCourseController {
   async delete(@Param('id') id: string): Promise<void> {
     return await this.mainCourseService.delete(id);
   }
+
+  @Get(':id')
+  async findById(@Param('id') id: string): Promise<MainCourse> {
+    return this.mainCourseService.findById(id);
+  }
 }
