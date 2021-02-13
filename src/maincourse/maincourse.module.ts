@@ -13,4 +13,4 @@ import { MainCourse, MainCourseSchema } from 'src/database/models/maincourse';
   controllers: [MainCourseController],
   providers: [MainCourseService],
 })
-export class CategoryModule {}
+export class MainCourseModule {}
