@@ -1,8 +1,9 @@
+import { SideDisheService } from './service/sidedishe';
 import { Module } from '@nestjs/common';
 
 @Module({
   imports: [],
   controllers: [],
-  providers: [],
+  providers: [SideDisheService],
 })
 export class SidedisheModule {}
