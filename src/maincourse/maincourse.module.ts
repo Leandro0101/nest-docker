@@ -1,5 +1,5 @@
 import { MainCourseController } from './controller/maincourse';
-import { MainCourseService } from './service/maincourse';
+import { MainCourseService } from './service/implementations/maincourse';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MainCourse, MainCourseSchema } from 'src/database/models/maincourse';
