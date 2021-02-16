@@ -3,7 +3,7 @@ import { SideDish } from 'src/database/models/sidedish';
 import { CreateSideDishRepository } from '../repositories/create';
 
 @Injectable()
-export class SideDishService {
+export class CreateSideDishService {
   constructor(
     private readonly createSideDishRepository: CreateSideDishRepository,
   ) {}
