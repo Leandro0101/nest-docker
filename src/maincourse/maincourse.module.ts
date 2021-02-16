@@ -1,8 +1,11 @@
 import { MainCourseController } from './controller/maincourse';
-import { MainCourseService } from './service/implementations/maincourse';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MainCourse, MainCourseSchema } from 'src/database/models/maincourse';
+import { CreateMainCourseService } from './service/implementations/create';
+import { DeleteMainCourseService } from './service/implementations/delete';
+import { FindMainCourseByIdService } from './service/implementations/findById';
+import { FindAllMainCourseService } from './service/implementations/findAll';
 
 @Module({
   imports: [
@@ -11,7 +14,11 @@ import { MainCourse, MainCourseSchema } from 'src/database/models/maincourse';
     ]),
   ],
   controllers: [MainCourseController],
-  providers: [MainCourseService],
-  exports: [MainCourseService],
+  providers: [
+    CreateMainCourseService,
+    DeleteMainCourseService,
+    FindMainCourseByIdService,
+    FindAllMainCourseService,
+  ],
 })
 export class MainCourseModule {}

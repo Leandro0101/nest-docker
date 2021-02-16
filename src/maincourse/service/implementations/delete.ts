@@ -5,7 +5,7 @@ import { MainCourse } from 'src/database/models/maincourse';
 import { IDeleteMainCourse } from '../delete';
 
 @Injectable()
-export class MainCourseService implements IDeleteMainCourse {
+export class DeleteMainCourseService implements IDeleteMainCourse {
   constructor(
     @InjectModel('MainCourse')
     private readonly mainCourseModel: Model<MainCourse>,
