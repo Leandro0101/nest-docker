@@ -1,16 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 import { MainCourse } from 'src/database/models/maincourse';
+import { FindAllMainCourseRepository } from 'src/maincourse/repositories/findAll';
 
 @Injectable()
 export class FindAllMainCourseService {
   constructor(
-    @InjectModel('MainCourse')
-    private readonly mainCourseModel: Model<MainCourse>,
+    private readonly findAllMainCourseRepository: FindAllMainCourseRepository,
   ) {}
 
   async findAll(): Promise<MainCourse[]> {
-    return this.mainCourseModel.find().exec();
+    return this.findAllMainCourseRepository.exec();
   }
 }
