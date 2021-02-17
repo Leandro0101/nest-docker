@@ -1,4 +1,4 @@
-import { AddressController } from './controller/address';
+import { AddressController } from './controller/findAll';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Address, AddressSchema } from 'src/database/models/address';
