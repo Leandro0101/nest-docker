@@ -8,7 +8,7 @@ export class FindAllMainCourseController {
 
   @Get()
   async Delete(): Promise<MainCourse[]> {
-    const foundedsMainCourses: MainCourse[] = await this.findAllMainCourseService.findAll();
-    return foundedsMainCourses;
+    const foundsMainCourses: MainCourse[] = await this.findAllMainCourseService.findAll();
+    return foundsMainCourses;
   }
 }

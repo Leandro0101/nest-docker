@@ -9,6 +9,8 @@ export class FindMainCourseByIdRepository {
   ) {}
 
   async exec(id: string): Promise<MainCourse> {
-    return this.mainCourseModel.findById(id);
+    const foundMainCourse: MainCourse = await this.mainCourseModel.findById(id);
+
+    return foundMainCourse;
   }
 }

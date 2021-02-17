@@ -9,8 +9,8 @@ export class FindAllAddressRepository {
   ) {}
 
   async exec(): Promise<Address[]> {
-    const foundedsAdresses: Address[] = await this.addressModel.find().exec();
+    const foundsAdresses: Address[] = await this.addressModel.find().exec();
 
-    return foundedsAdresses;
+    return foundsAdresses;
   }
 }

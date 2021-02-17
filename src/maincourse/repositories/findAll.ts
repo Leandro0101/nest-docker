@@ -9,6 +9,9 @@ export class FindAllMainCourseRepository {
   ) {}
 
   async exec(): Promise<MainCourse[]> {
-    return this.mainCourseModel.find().exec();
+    const foundsMainCourses: MainCourse[] = await this.mainCourseModel
+      .find()
+      .exec();
+    return foundsMainCourses;
   }
 }

@@ -8,10 +8,10 @@ export class FindMainCourseByIdController {
 
   @Delete(':mainCourseId')
   async Delete(@Param('id') mainCourseId: string): Promise<MainCourse> {
-    const foundedMainCourse: MainCourse = await this.findMainCourseByIdService.findById(
+    const foundMainCourse: MainCourse = await this.findMainCourseByIdService.findById(
       mainCourseId,
     );
 
-    return foundedMainCourse;
+    return foundMainCourse;
   }
 }
