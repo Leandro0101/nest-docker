@@ -1,9 +1,16 @@
-import { SidedishController } from './controller/sidedish';
 import { Module } from '@nestjs/common';
-import { SideDishService } from './service/sidedish';
 import { MainCourseModule } from 'src/maincourse/maincourse.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { SideDish, SideDishSchema } from 'src/database/models/sidedish';
+import { CreateSidedishController } from './controller/create';
+import { FindAllSidedishController } from './controller/findAll';
+import { DeleteSidedishController } from './controller/delete';
+import { CreateSideDishService } from './service/create';
+import { FindAllSideDishService } from './service/findAll';
+import { DeleteSideDishService } from './service/delete';
+import { CreateSideDishRepository } from './repositories/create';
+import { FindAllSideDishRepository } from './repositories/findAll';
+import { DeleteSideDishRepository } from './repositories/delete';
 
 @Module({
   imports: [
@@ -12,7 +19,18 @@ import { SideDish, SideDishSchema } from 'src/database/models/sidedish';
     ]),
     MainCourseModule,
   ],
-  controllers: [SidedishController],
-  providers: [SideDishService],
+  controllers: [
+    CreateSidedishController,
+    FindAllSidedishController,
+    DeleteSidedishController,
+  ],
+  providers: [
+    CreateSideDishService,
+    FindAllSideDishService,
+    DeleteSideDishService,
+    CreateSideDishRepository,
+    FindAllSideDishRepository,
+    DeleteSideDishRepository,
+  ],
 })
 export class SidedishModule {}
