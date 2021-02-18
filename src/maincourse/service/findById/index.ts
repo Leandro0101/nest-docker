@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IMainCourse } from 'src/shared/protocols/maincourse';
-import { FindMainCourseByIdRepository } from '../repositories/findById';
+import { IMainCourse } from '../../../shared/protocols/maincourse';
+import { FindMainCourseByIdRepository } from '../../repositories/findById';
 
 @Injectable()
 export class FindMainCourseByIdService {

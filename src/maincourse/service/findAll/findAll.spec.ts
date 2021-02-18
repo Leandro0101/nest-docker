@@ -29,7 +29,7 @@ describe('FindAllMainCourseService', () => {
     mockRepository.exec.mockReset();
   });
 
-  it('Should return a exception if main course not exist', async () => {
+  it('Should return all main course', async () => {
     const mainCourses: IMainCourse[] = mainCourseDataSource.findAll();
     mockRepository.exec.mockReturnValue(mainCourses);
     const returnedMainCourses = await findAllMainCourseService.findAll();
