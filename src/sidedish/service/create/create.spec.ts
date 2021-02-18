@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
 import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
-import { CreateSideDishService } from './create';
+import { CreateSideDishService } from '.';
 import { CreateSideDishRepository } from '../../repositories/create';
 import { ISideDish } from '../../../shared/protocols/sidedish';
 describe('CreateSideDishService', () => {

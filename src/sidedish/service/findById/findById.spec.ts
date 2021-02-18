@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
 import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
-import { FindSideDishByIdService } from './findById';
+import { FindSideDishByIdService } from '.';
 import { FindSideDishByIdRepository } from '../../repositories/findById';
 import { ISideDish } from 'src/shared/protocols/sidedish';
 describe('FindAllSideDishService', () => {

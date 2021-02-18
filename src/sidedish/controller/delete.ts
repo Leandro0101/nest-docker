@@ -1,6 +1,6 @@
 import { Controller, Delete, Param } from '@nestjs/common';
 import { ISideDish } from 'src/shared/protocols/sidedish';
-import { DeleteSideDishService } from '../service/delete/delete';
+import { DeleteSideDishService } from '../service/delete';
 
 @Controller('sidedishes')
 export class DeleteSidedishController {

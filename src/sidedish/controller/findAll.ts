@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { SideDish } from 'src/database/models/sidedish';
-import { FindAllSideDishService } from '../service/findAll/findAll';
+import { FindAllSideDishService } from '../service/findAll';
 
 @Controller('sidedishes')
 export class FindAllSidedishController {

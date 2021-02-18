@@ -3,7 +3,7 @@ import { DeleteSideDishRepository } from '../../repositories/delete';
 import { FindSideDishByIdRepository } from '../../repositories/findById';
 import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
 import { ISideDish } from '../../../shared/protocols/sidedish';
-import { DeleteSideDishService } from './delete';
+import { DeleteSideDishService } from '.';
 import { NotFoundException } from '@nestjs/common';
 describe('DeleteSideDishService', () => {
   let deleteSideDishService: DeleteSideDishService;
