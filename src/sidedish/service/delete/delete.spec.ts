@@ -57,7 +57,7 @@ describe('DeleteSideDishService', () => {
     expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
   });
 
-  it('Should return a exception if user not found ', async () => {
+  it('Should return a exception if user not found', async () => {
     mockFindByIdRepository.exec.mockReturnValue(null);
 
     expect(

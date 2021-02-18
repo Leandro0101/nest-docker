@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { SideDish } from 'src/database/models/sidedish';
-import { FindAllSideDishRepository } from '../repositories/findAll';
+import { FindAllSideDishRepository } from '../../repositories/findAll';
 
 @Injectable()
 export class FindAllSideDishService {

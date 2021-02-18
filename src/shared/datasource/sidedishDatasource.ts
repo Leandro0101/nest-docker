@@ -13,6 +13,10 @@ class SideDishDataSource {
     const sideDish: ISideDish = this.sidedishes[index];
     return sideDish;
   }
+
+  findAll(): ISideDish[] {
+    return this.sidedishes;
+  }
 }
 
 export default new SideDishDataSource();

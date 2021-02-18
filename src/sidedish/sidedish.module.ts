@@ -6,7 +6,7 @@ import { CreateSidedishController } from './controller/create';
 import { FindAllSidedishController } from './controller/findAll';
 import { DeleteSidedishController } from './controller/delete';
 import { CreateSideDishService } from './service/create/create';
-import { FindAllSideDishService } from './service/findAll';
+import { FindAllSideDishService } from './service/findAll/findAll';
 import { DeleteSideDishService } from './service/delete/delete';
 import { CreateSideDishRepository } from './repositories/create';
 import { FindAllSideDishRepository } from './repositories/findAll';
