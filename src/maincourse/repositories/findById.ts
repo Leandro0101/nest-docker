@@ -10,9 +10,10 @@ export class FindMainCourseByIdRepository {
   ) {}
 
   async exec(id: string): Promise<IMainCourse> {
-    const foundMainCourse: IMainCourse = await this.mainCourseModel.findById(
-      id,
-    );
+    let foundMainCourse: IMainCourse;
+    try {
+      foundMainCourse = await this.mainCourseModel.findById(id);
+    } catch (err) {}
 
     return foundMainCourse;
   }
