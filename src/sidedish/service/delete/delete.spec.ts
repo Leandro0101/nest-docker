@@ -4,6 +4,7 @@ import { FindSideDishByIdRepository } from '../../repositories/findById';
 import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
 import { ISideDish } from '../../../shared/protocols/sidedish';
 import { DeleteSideDishService } from './delete';
+import { NotFoundException } from '@nestjs/common';
 describe('DeleteSideDishService', () => {
   let deleteSideDishService: DeleteSideDishService;
 
@@ -15,7 +16,7 @@ describe('DeleteSideDishService', () => {
     exec: jest.fn(),
   };
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const module = await Test.createTestingModule({
       providers: [
         DeleteSideDishService,
@@ -36,6 +37,11 @@ describe('DeleteSideDishService', () => {
     );
   });
 
+  beforeEach(() => {
+    mockDeleteRepository.exec.mockReset();
+    mockFindByIdRepository.exec.mockReset();
+  });
+
   it('Should return the deleted side dish', async () => {
     const sidedish: ISideDish = sideDishDataSource.findOne(0);
 
@@ -48,6 +54,16 @@ describe('DeleteSideDishService', () => {
 
     expect(deletedSideDish).toEqual(sidedish);
     expect(mockDeleteRepository.exec).toBeCalledTimes(1);
+    expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
+  });
+
+  it('Should return a exception if user not found ', async () => {
+    mockFindByIdRepository.exec.mockReturnValue(null);
+
+    expect(
+      deleteSideDishService.delete('602c376933496501c30aa231'),
+    ).rejects.toBeInstanceOf(NotFoundException);
+
     expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
   });
 });
