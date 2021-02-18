@@ -1,12 +1,13 @@
 import { Controller, Delete, Param } from '@nestjs/common';
-import { DeleteSideDishService } from '../service/delete';
+import { ISideDish } from 'src/shared/protocols/sidedish';
+import { DeleteSideDishService } from '../service/delete/delete';
 
 @Controller('sidedishes')
 export class DeleteSidedishController {
   constructor(private deleteCreateSideDishService: DeleteSideDishService) {}
 
   @Delete(':id')
-  async delete(@Param('id') id: string): Promise<void> {
+  async delete(@Param('id') id: string): Promise<ISideDish> {
     return await this.deleteCreateSideDishService.delete(id);
   }
 }

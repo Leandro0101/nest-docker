@@ -7,10 +7,11 @@ import { FindAllSidedishController } from './controller/findAll';
 import { DeleteSidedishController } from './controller/delete';
 import { CreateSideDishService } from './service/create/create';
 import { FindAllSideDishService } from './service/findAll';
-import { DeleteSideDishService } from './service/delete';
+import { DeleteSideDishService } from './service/delete/delete';
 import { CreateSideDishRepository } from './repositories/create';
 import { FindAllSideDishRepository } from './repositories/findAll';
 import { DeleteSideDishRepository } from './repositories/delete';
+import { FindSideDishByIdRepository } from './repositories/findById';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { DeleteSideDishRepository } from './repositories/delete';
     DeleteSideDishService,
     CreateSideDishRepository,
     FindAllSideDishRepository,
+    FindSideDishByIdRepository,
     DeleteSideDishRepository,
   ],
 })

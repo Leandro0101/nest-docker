@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { SideDish } from 'src/database/models/sidedish';
+import { ISideDish } from '../../shared/protocols/sidedish';
 import { FindSideDishByIdRepository } from '../repositories/findById';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class FindSideDishByIdService {
     private readonly findSideDishByIdRepository: FindSideDishByIdRepository,
   ) {}
 
-  async findById(id: string): Promise<SideDish> {
+  async findById(id: string): Promise<ISideDish> {
     return await this.findSideDishByIdRepository.exec(id);
   }
 }
