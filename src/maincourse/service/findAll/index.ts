@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { MainCourse } from 'src/database/models/maincourse';
-import { FindAllMainCourseRepository } from 'src/maincourse/repositories/findAll';
-import { IMainCourse } from 'src/shared/protocols/maincourse';
+import { MainCourse } from '../../../database/models/maincourse';
+import { FindAllMainCourseRepository } from '../../repositories/findAll';
+import { IMainCourse } from '../../../shared/protocols/maincourse';
 
 @Injectable()
 export class FindAllMainCourseService {
