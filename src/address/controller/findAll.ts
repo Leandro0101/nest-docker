@@ -3,7 +3,7 @@ import { Address } from 'src/database/models/address';
 import { FindAllAddressService } from '../service/findAll';
 
 @Controller('adresses')
-export class AddressController {
+export class FindAllAddressController {
   constructor(private readonly findAllAddressService: FindAllAddressService) {}
 
   @Get()

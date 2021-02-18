@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { SideDish } from 'src/database/models/sidedish';
-import { CreateSideDishRepository } from '../repositories/create';
+import { ISideDish } from 'src/shared/protocols/sidedish';
+import { CreateSideDishRepository } from '../repositories/create/create';
 
 @Injectable()
 export class CreateSideDishService {
@@ -8,11 +8,9 @@ export class CreateSideDishService {
     private readonly createSideDishRepository: CreateSideDishRepository,
   ) {}
 
-  async create(sidedish: SideDish): Promise<SideDish> {
-    const createdSideDish: SideDish = await this.createSideDishRepository.exec(
-      sidedish,
-    );
+  async create(sidedish: ISideDish): Promise<ISideDish> {
+    const createdSideDish = await this.createSideDishRepository.exec(sidedish);
 
-    return await createdSideDish.save();
+    return createdSideDish;
   }
 }

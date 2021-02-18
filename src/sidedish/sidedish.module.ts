@@ -8,7 +8,7 @@ import { DeleteSidedishController } from './controller/delete';
 import { CreateSideDishService } from './service/create';
 import { FindAllSideDishService } from './service/findAll';
 import { DeleteSideDishService } from './service/delete';
-import { CreateSideDishRepository } from './repositories/create';
+import { CreateSideDishRepository } from './repositories/create/create';
 import { FindAllSideDishRepository } from './repositories/findAll';
 import { DeleteSideDishRepository } from './repositories/delete';
 
