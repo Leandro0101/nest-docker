@@ -1,11 +1,17 @@
 import { Test } from '@nestjs/testing';
-import { DeleteSideDishRepository } from 'src/sidedish/repositories/delete';
+import { DeleteSideDishRepository } from '../../repositories/delete';
+import { FindSideDishByIdRepository } from '../../repositories/findById';
 import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
 import { ISideDish } from '../../../shared/protocols/sidedish';
 import { DeleteSideDishService } from './delete';
 describe('DeleteSideDishService', () => {
   let deleteSideDishService: DeleteSideDishService;
-  const mockRepository = {
+
+  const mockDeleteRepository = {
+    exec: jest.fn(),
+  };
+
+  const mockFindByIdRepository = {
     exec: jest.fn(),
   };
 
@@ -16,7 +22,11 @@ describe('DeleteSideDishService', () => {
 
         {
           provide: DeleteSideDishRepository,
-          useValue: mockRepository,
+          useValue: mockDeleteRepository,
+        },
+        {
+          provide: FindSideDishByIdRepository,
+          useValue: mockFindByIdRepository,
         },
       ],
     }).compile();
@@ -26,7 +36,18 @@ describe('DeleteSideDishService', () => {
     );
   });
 
-  it('Should return the Deleted side dish', async () => {
-    expect(mockRepository.exec).toBeCalledTimes(1);
+  it('Should return the deleted side dish', async () => {
+    const sidedish: ISideDish = sideDishDataSource.findOne(0);
+
+    mockFindByIdRepository.exec.mockReturnValue(sidedish);
+    mockDeleteRepository.exec.mockReturnValue(sidedish);
+
+    const deletedSideDish: ISideDish = await deleteSideDishService.delete(
+      '602c376933496501c30aa231',
+    );
+
+    expect(deletedSideDish).toEqual(sidedish);
+    expect(mockDeleteRepository.exec).toBeCalledTimes(1);
+    expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
   });
 });
