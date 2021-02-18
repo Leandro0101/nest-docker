@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MainCourse } from 'src/database/models/maincourse';
-import { CreateMainCourseRepository } from 'src/maincourse/repositories/create';
+import { CreateMainCourseRepository } from '../../repositories/create';
 import { IMainCourse } from 'src/shared/protocols/maincourse';
 
 @Injectable()
