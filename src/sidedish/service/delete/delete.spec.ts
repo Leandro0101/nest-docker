@@ -61,7 +61,7 @@ describe('DeleteSideDishService', () => {
     mockFindByIdRepository.exec.mockReturnValue(null);
 
     expect(
-      deleteSideDishService.delete('602c376933496501c30aa231'),
+      deleteSideDishService.delete('sidedish'),
     ).rejects.toBeInstanceOf(NotFoundException);
 
     expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
