@@ -1,6 +1,6 @@
 import { ISideDish } from '../protocols/sidedish';
 
-export class SideDishDataSource {
+class SideDishDataSource {
   private sidedishes: ISideDish[] = [
     { name: 'sidedish 1', price: 25 },
     { name: 'sidedish 2', price: 15 },
@@ -14,3 +14,5 @@ export class SideDishDataSource {
     return sideDish;
   }
 }
+
+export default new SideDishDataSource();

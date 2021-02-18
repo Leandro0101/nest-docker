@@ -10,7 +10,7 @@ export class CreateSideDishRepository {
   ) {}
 
   async exec(sideDish: ISideDish): Promise<ISideDish> {
-    const createdSideDish: SideDish = new this.sideDishModel(sideDish);
+    const createdSideDish: SideDish = await this.sideDishModel.create(sideDish);
     return await createdSideDish.save();
   }
 }

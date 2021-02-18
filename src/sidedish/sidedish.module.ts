@@ -5,10 +5,10 @@ import { SideDish, SideDishSchema } from 'src/database/models/sidedish';
 import { CreateSidedishController } from './controller/create';
 import { FindAllSidedishController } from './controller/findAll';
 import { DeleteSidedishController } from './controller/delete';
-import { CreateSideDishService } from './service/create';
+import { CreateSideDishService } from './service/create/create';
 import { FindAllSideDishService } from './service/findAll';
 import { DeleteSideDishService } from './service/delete';
-import { CreateSideDishRepository } from './repositories/create/create';
+import { CreateSideDishRepository } from './repositories/create';
 import { FindAllSideDishRepository } from './repositories/findAll';
 import { DeleteSideDishRepository } from './repositories/delete';
 
