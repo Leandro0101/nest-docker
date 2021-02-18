@@ -60,9 +60,9 @@ describe('DeleteSideDishService', () => {
   it('Should return a exception if user not found', async () => {
     mockFindByIdRepository.exec.mockReturnValue(null);
 
-    expect(
-      deleteSideDishService.delete('sidedish'),
-    ).rejects.toBeInstanceOf(NotFoundException);
+    expect(deleteSideDishService.delete('sidedish')).rejects.toBeInstanceOf(
+      NotFoundException,
+    );
 
     expect(mockFindByIdRepository.exec).toBeCalledTimes(1);
   });

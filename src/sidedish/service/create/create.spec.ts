@@ -9,7 +9,7 @@ describe('CreateSideDishService', () => {
     exec: jest.fn(),
   };
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const module = await Test.createTestingModule({
       providers: [
         CreateSideDishService,
@@ -24,6 +24,10 @@ describe('CreateSideDishService', () => {
     createSideDishService = module.get<CreateSideDishService>(
       CreateSideDishService,
     );
+  });
+
+  beforeEach(() => {
+    mockRepository.exec.mockReset();
   });
 
   it('Should return the created side dish', async () => {
