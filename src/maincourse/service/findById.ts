@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MainCourse } from 'src/database/models/maincourse';
+import { IMainCourse } from 'src/shared/protocols/maincourse';
 import { FindMainCourseByIdRepository } from '../repositories/findById';
 
 @Injectable()
@@ -8,8 +8,8 @@ export class FindMainCourseByIdService {
     private readonly findMainCourseByIdRepository: FindMainCourseByIdRepository,
   ) {}
 
-  async findById(id: string): Promise<MainCourse> {
-    const mainCourse: MainCourse = await this.findMainCourseByIdRepository.exec(
+  async findById(id: string): Promise<IMainCourse> {
+    const mainCourse: IMainCourse = await this.findMainCourseByIdRepository.exec(
       id,
     );
     return mainCourse;

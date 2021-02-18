@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { MainCourse } from 'src/database/models/maincourse';
 import { CreateMainCourseRepository } from 'src/maincourse/repositories/create';
+import { IMainCourse } from 'src/shared/protocols/maincourse';
 
 @Injectable()
 export class CreateMainCourseService {
@@ -8,8 +9,8 @@ export class CreateMainCourseService {
     private readonly createMainCourseRepository: CreateMainCourseRepository,
   ) {}
 
-  async create(mainCourse: MainCourse): Promise<MainCourse> {
-    const createdMainCourse: MainCourse = await this.createMainCourseRepository.exec(
+  async create(mainCourse: IMainCourse): Promise<IMainCourse> {
+    const createdMainCourse: IMainCourse = await this.createMainCourseRepository.exec(
       mainCourse,
     );
 
