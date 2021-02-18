@@ -3,6 +3,7 @@ import sideDishDataSource from '../../../shared/datasource/sidedishDatasource';
 import { DeleteSidedishController } from '.';
 import { ISideDish } from '../../../shared/protocols/sidedish';
 import { DeleteSideDishService } from '../../service/delete';
+import { NotFoundException } from '@nestjs/common';
 describe('CreateSideDishService', () => {
   let deleteSidedishController: DeleteSidedishController;
   const mockRepository = {
@@ -38,5 +39,15 @@ describe('CreateSideDishService', () => {
     );
 
     expect(sideDish).toEqual(deletedSideDish);
+    expect(mockRepository.delete).toBeCalledTimes(1);
+  });
+
+  it('Should return a exception if side dish not found', async () => {
+    mockRepository.delete.mockReturnValue(null);
+
+    expect(
+      deleteSidedishController.delete('602c376933496501c30aa231'),
+    ).rejects.toBeInstanceOf(NotFoundException);
+    expect(mockRepository.delete).toBeCalledTimes(1);
   });
 });
