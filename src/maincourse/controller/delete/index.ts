@@ -1,6 +1,6 @@
 import { Controller, Delete, Param } from '@nestjs/common';
 import { IMainCourse } from 'src/shared/protocols/maincourse';
-import { DeleteMainCourseService } from '../service/delete';
+import { DeleteMainCourseService } from '../../service/delete';
 
 @Controller('maindish')
 export class DeleteMainCourseController {

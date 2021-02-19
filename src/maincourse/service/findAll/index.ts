@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { MainCourse } from '../../../database/models/maincourse';
 import { FindAllMainCourseRepository } from '../../repositories/findAll';
 import { IMainCourse } from '../../../shared/protocols/maincourse';
 

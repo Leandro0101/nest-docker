@@ -17,7 +17,7 @@ export class DeleteMainCourseService {
     );
 
     if (!mainCourse) {
-      throw new NotFoundException();
+      throw new NotFoundException('Resource not found');
     }
     await this.deleteMainCourseRepository.exec(id);
 

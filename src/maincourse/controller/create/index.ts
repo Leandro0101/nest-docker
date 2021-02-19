@@ -1,7 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { MainCourse } from 'src/database/models/maincourse';
-import { IMainCourse } from 'src/shared/protocols/maincourse';
-import { CreateMainCourseService } from '../service/create';
+import { IMainCourse } from '../../../shared/protocols/maincourse';
+import { CreateMainCourseService } from '../../service/create';
 
 @Controller('maindish')
 export class CreateMainCourseController {
