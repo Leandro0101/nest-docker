@@ -8,6 +8,9 @@ export class CreateSidedishController {
 
   @Post()
   async create(@Body() sideDish: ISideDish): Promise<ISideDish> {
-    return await this.createSideDishService.create(sideDish);
+    const createdSidhDish: ISideDish = await this.createSideDishService.create(
+      sideDish,
+    );
+    return createdSidhDish;
   }
 }

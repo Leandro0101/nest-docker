@@ -10,7 +10,7 @@ export class FindSideDishByIdRepository {
   ) {}
 
   async exec(id: string): Promise<ISideDish> {
-    let foundSideDish: ISideDish;
+    let foundSideDish: ISideDish = null;
 
     try {
       foundSideDish = await this.sideDishModel.findById(id);
